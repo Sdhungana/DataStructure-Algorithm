@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int i, size, pos;
+    cout<<"Enter the size of array: ";
+    cin >> size;
+    int a[size];
+    cout<<"Enter the array elements: ";
+    for(i = 0; i < size; i++)
+    {
+        cin >> a[i];
+    }
+    cout<<"Elements of the array: \t";
+    for (i = 0; i < size; i++)
+    {
+        cout << a[i] << "\t";
+    }
+    cout<<"\n Enter the position of elements to be deleted: \t";
+    cin >> pos;
+    if(pos > size)
+    {
+        cout<<"\n Out of range error";
+    }
+    else{
+        for(i = pos; i < size; i++)
+        {
+            a[i-1] = a[i];
+        }
+    }
+    cout << "\n Final Array Elements: \t";
+    for(i = 0; i < size-1; i++)
+    {
+        cout << a[i] << "\t";
+    }
+
+    return 0;
+}
