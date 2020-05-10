@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int i, size, pos, value;
+    cout<<"Enter the array size: ";
+    cin >> size;
+    int a[size];
+
+    cout<<"\n Enter the array elements: ";
+    for(i = 0; i < size; i++)
+    {
+        cin >> a[i];
+    }
+    cout << "\n Elements in the array: ";
+    for (i = 0; i < size; i++)
+    {
+        cout << a[i] << "\t";
+    }
+    cout << "\n Enter the position of new array element: ";
+    cin >> pos;
+    if(pos > size)
+    {
+        cout << "\n Out of Range Error ";
+    }
+    else
+    {
+        cout << "\n Enter the value to be inserted: ";
+        cin >> value;
+        for(i = size; i >= pos; i--)
+        {
+            a[i] = a[i-1];
+        }
+        a[pos-1] = value;
+        cout << "\n The final array output is: ";
+        for (i = 0; i <= size; i++)
+        {
+            cout << a[i] << "\t";
+        }
+    }
+    
+
+    return 0;
+}
